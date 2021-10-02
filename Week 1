@@ -1,0 +1,32 @@
+package noman;
+import java.util.*;
+import javax.swing.*;
+
+
+public class LoveCalculator {
+
+	public static void main(String[] args) {
+	   
+		String person1,person2;
+		
+		 
+	
+		person1=JOptionPane.showInputDialog(null, "Enter First  Person's Name", "Love Calculator", JOptionPane.INFORMATION_MESSAGE);
+	
+		 
+		 
+		 person2=JOptionPane.showInputDialog(null, "Enter Second Person's Name", "Love Calculator", JOptionPane.INFORMATION_MESSAGE);
+        
+		Random love=new Random();
+		
+		int lovepersentage = love.nextInt(100);
+
+		  ImageIcon icon = new ImageIcon("src/firstpic.jpg");
+	    JOptionPane.showMessageDialog(null, "Love Between "+person1+ " And "+person2+ " is "+lovepersentage+ " persent", "Love Calculator", JOptionPane.INFORMATION_MESSAGE, icon);		
+		
+		
+		
+
+	}
+
+}
