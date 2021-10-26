@@ -1,0 +1,113 @@
+package assignment_1_class;
+import java.util.*;
+
+public class Grade {	
+	 
+	int        Highest;
+	int 	   lowest;
+    int[][] grade = new int[10][3];
+    double[]   average= new double[10];
+    
+	public static void main(String[] args) {
+
+		        Grade obj=new Grade();
+		        obj.Grade_input();
+		        obj.Display_Grade();
+		        obj.Highest_Grade();
+		        obj.Lowest_Grade();
+		        
+	}
+	
+	
+	
+      void Grade_input()
+	{
+		int count=0;
+		Scanner obj = new Scanner(System.in);	
+	
+		 int m=1;
+		for(int a=0; a<10; a++)
+		{
+			System.out.println("Enter The Marks of "+m+ " Student :");
+			count=0;
+			for(int b=0; b<3; b++)
+			{
+				
+				grade[a][b]=obj.nextInt();
+				count = count+grade[a][b];
+			
+			
+			
+			average[a]=count/3;
+		    
+		}
+	
+			m++;
+		}
+		
+		obj.close();
+	}
+	
+      
+      void Highest_Grade()
+      {
+    	  Highest=grade[1][1];
+    	  for(int a=0; a<10; a++)
+    	  {
+    		  for(int b=0; b<3; b++)
+    		  {
+    		       if(grade[a][b] > Highest)
+    		       {
+    		    	   Highest = grade[a][b];
+    		       }
+    		  }
+    	  }    
+         
+    	  System.out.println("Highest Grade Point is :" +Highest);
+      }
+      
+      void Lowest_Grade()
+      {
+    	  lowest=grade[1][1];
+    	  for(int a=0; a<10; a++)
+    	  {
+    		  for(int b=0; b<3; b++)
+    		  {
+    			  
+    		       if(grade[a][b] < lowest)
+    		       {
+    		    	   lowest = grade[a][b];
+    		       }
+    		  }
+    	  }    
+    	  System.out.println("Lowest Grade Point is :" +lowest);     
+
+      }
+	
+	
+	void Display_Grade()
+	{
+		
+		System.out.println("Welcome to the grade book for Software Construction &amp; Development!");
+		System.out.println("The grades are:");
+		
+		System.out.println(" Name " + " 	  Exam I " + " Exam II " + "Exam III " + "Average" );
+		
+		for(int a=0; a<10; a++)
+		{
+			System.out.print("Student"+a+1 );
+			for(int b=0; b<3; b++)
+			{
+				System.out.print(" "+ grade[a][b]+" 	 ");
+			    
+			}
+			System.out.println("   "+average[a]);
+			System.out.println();
+		}
+		
+		
+		
+	}
+	
+
+}
